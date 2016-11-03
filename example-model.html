@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example Model</title>
+    <meta name="description" content="Example 1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.3.2/aframe.js"></script>
+  </head>
+  <body>
+    <a-scene fog="type: linear; color: #000; near: 1; far: 5" color="black">
+      <a-assets>
+        <a-asset-item id="teapot" src="models/teapot.obj"></a-asset-item>
+      </a-assets>
+
+      <a-entity obj-model="obj: #teapot" color="green" position="0 0 -2.5">
+        <a-animation attribute="rotation"
+                     dur="9500"
+                     easing="linear"
+                     from="0 45 0"
+                     to="0 405 0"
+                     repeat="indefinite">
+        </a-animation>
+      </a-entity>
+
+      <a-sky color="#000"></a-sky>
+      <a-entity light="type: ambient; color: #101030"></a-entity>
+      <a-entity light="type: directional; color: #ffffff; intensity: 0.5" position="0 1 0"></a-entity>
+      <a-entity position="0 0 2">
+        <a-camera></a-camera>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
